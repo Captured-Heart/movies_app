@@ -30,7 +30,7 @@ class MoviesApp extends ConsumerWidget {
         },
         error: (Object error, StackTrace? stackTrace) {
           log('Error fetching configurations');
-          log(error.toString());
+          log('this is the error : ${error.toString()}');
           log(stackTrace.toString());
           return const Scaffold(body: ErrorView());
         },

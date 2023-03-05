@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:movies_app/core/configs/configs.dart';
 import 'package:movies_app/core/services/http/http_service.dart';
 import 'package:movies_app/features/tmdb-configs/models/tmdb_configs.dart';
@@ -28,7 +30,7 @@ class HttpTMDBConfigsRepository implements TMDBConfigsRepository {
       },
       forceRefresh: forceRefresh,
     );
-
+    log('apikey: $apiKey');
     return TMDBConfigs.fromJson(response);
   }
 }

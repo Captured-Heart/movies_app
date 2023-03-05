@@ -1,4 +1,6 @@
 /// App level configuration variables
+// ignore_for_file: lines_longer_than_80_chars
+
 class Configs {
   /// The max allowed age duration for the http cache
   static const Duration maxCacheAge = Duration(hours: 1);
@@ -15,5 +17,6 @@ class Configs {
   /// API Key registered with The TMDB API
   ///
   /// See: https://developers.themoviedb.org/3/getting-started/introduction
-  static const String tmdbAPIKey = String.fromEnvironment('TMDB_API_KEY');
+  static const String tmdbAPIKey = '7fa10b52351b525d80d3e83414051e3e';
+  // String.fromEnvironment('7fa10b52351b525d80d3e83414051e3e');
 }
