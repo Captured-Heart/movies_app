@@ -12,7 +12,7 @@ import 'package:movies_app/features/people/views/widgets/person_avatar.dart';
 /// Widget holding a list item in the popular people list
 class PopularPersonListItem extends ConsumerWidget {
   /// Creates a new instance of [PopularPersonListItem]
-  const PopularPersonListItem({Key? key}) : super(key: key);
+  const PopularPersonListItem({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -48,6 +48,7 @@ class PopularPersonListItem extends ConsumerWidget {
                   Expanded(
                     child: Hero(
                       tag: 'person_${person.id}_profile_picture',
+                      transitionOnUserGestures: true,
                       child: PersonAvatar(
                         person.avatar,
                         gender: person.gender,
@@ -70,9 +71,6 @@ class PopularPersonListItem extends ConsumerWidget {
         error: (Object error, StackTrace? stackTrace) {
           log('Error fetching current popular person');
           log(error.toString());
-          if (error is FormatException) {
-            log('Format Exception: ${error.source}');
-          }
           return const ErrorView();
         },
         loading: () => const ListItemShimmer(),
