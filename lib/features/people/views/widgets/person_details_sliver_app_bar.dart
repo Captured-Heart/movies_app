@@ -7,11 +7,11 @@ import 'package:movies_app/features/people/views/widgets/person_cover.dart';
 class PersonDetailsSliverAppBar extends StatelessWidget {
   /// Creates a new instance of [PersonDetailsSliverAppBar]
   const PersonDetailsSliverAppBar({
-    Key? key,
+    super.key,
     this.avatar,
     this.gender = Gender.unknown,
     required this.personId,
-  }) : super(key: key);
+  });
 
   /// Id of the person being previewed
   final int personId;
@@ -41,6 +41,7 @@ class PersonDetailsSliverAppBar extends StatelessWidget {
         padding: const EdgeInsetsDirectional.only(start: 40),
         child: Hero(
           tag: 'person_${personId}_profile_picture',
+          transitionOnUserGestures: true,
           child: ClipRRect(
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(50),
